@@ -27,6 +27,8 @@ public abstract class AbstractController {
     protected HttpServletResponse response;
     
     protected String opCode;
+    
+    protected String account;
 	
 	protected static final String SUFFIX = ".action";
 	
@@ -41,10 +43,15 @@ public abstract class AbstractController {
 	protected Operation getOperation() {
 		Operation operation = new Operation();
 		operation.setOpCode(this.opCode);
+		operation.setAccount(this.account);
 		operation.setOpTime(DateUtils.getTimestamp());
 		return operation;
 	}
 	
+	public void setAccount(String account) {
+		this.account = account;
+	}
+
 	protected void setRequestParam(String key, Object value) {
 		request.setAttribute(key, value);
 	}
