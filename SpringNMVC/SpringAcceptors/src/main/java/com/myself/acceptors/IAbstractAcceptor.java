@@ -10,5 +10,5 @@ public interface IAbstractAcceptor<T> {
 	public BusinessResult modifys(AbsBusObj<T> absBusObj) throws CustomException;
 
 	public BusinessResult deletes(AbsBusObj<T> absBusObj) throws CustomException;
-
+	
 }

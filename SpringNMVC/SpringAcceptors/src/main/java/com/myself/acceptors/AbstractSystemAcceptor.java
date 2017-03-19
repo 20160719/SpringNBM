@@ -9,6 +9,7 @@ import javax.annotation.Resource;
 import com.alibaba.fastjson.JSONArray;
 import com.myself.exception.CustomException;
 import com.myself.persistences.entity.Tree;
+import com.myself.services.system.IBookTypeService;
 import com.myself.services.system.IMenuService;
 import com.myself.services.system.IOrgService;
 import com.myself.services.system.IPermsService;
@@ -28,6 +29,8 @@ public abstract class AbstractSystemAcceptor<T> extends AbstractAcceptor<T> {
 	private IPermsService permsService;
 	@Resource(name = "orgServiceImpl")
 	private IOrgService orgService;
+	@Resource(name = "bookTypeServiceImpl")
+	private IBookTypeService bookTypeService;
 	
 	/**
 	 * 将tree字符串转为List<Tree>集合
@@ -110,6 +113,10 @@ public abstract class AbstractSystemAcceptor<T> extends AbstractAcceptor<T> {
 
 	protected final IOrgService getOrgService() {
 		return this.orgService;
+	}
+
+	protected IBookTypeService getBookTypeService() {
+		return bookTypeService;
 	}
 
 }
