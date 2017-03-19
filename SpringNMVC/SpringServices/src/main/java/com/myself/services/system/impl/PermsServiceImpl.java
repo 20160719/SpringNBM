@@ -10,8 +10,7 @@ import com.myself.services.AbstractSystemService;
 import com.myself.services.system.IPermsService;
 
 @Service(value = "permsServiceImpl")
-public class PermsServiceImpl extends AbstractSystemService<Permssion>
-		implements IPermsService {
+public class PermsServiceImpl extends AbstractSystemService<Permssion> implements IPermsService {
 
 	public Integer creates(List<Permssion> list) throws Exception {
 		// TODO Auto-generated method stub

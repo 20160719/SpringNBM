@@ -12,27 +12,22 @@ import com.myself.services.AbstractSystemService;
 import com.myself.services.system.IUserService;
 
 @Service(value = "userServiceImpl")
-public class UserServiceImpl extends AbstractSystemService<User> implements
-		IUserService {
+public class UserServiceImpl extends AbstractSystemService<User> implements IUserService {
 
 	public Integer creates(List<User> list) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getUserMapper().creates(list);
 	}
 
 	public Integer deletes(List<User> list) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getUserMapper().deletes(list);
 	}
 
 	public Integer modifys(List<User> list) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getUserMapper().modifys(list);
 	}
 
 	public User load(User obj) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return getUserMapper().load(obj);
 	}
 
 	public List<User> querys(User obj) throws Exception {

@@ -2,6 +2,7 @@ package com.myself.services;
 
 import javax.annotation.Resource;
 
+import com.myself.persistences.mapper.system.BookTypeMapper;
 import com.myself.persistences.mapper.system.MenuMapper;
 import com.myself.persistences.mapper.system.OrgMapper;
 import com.myself.persistences.mapper.system.PermsMapper;
@@ -20,6 +21,8 @@ public abstract class AbstractSystemService<T> extends AbstractService<T> {
 	private MenuMapper menuMapper;
 	@Resource(name = "permsMapper")
 	private PermsMapper permsMapper;
+	@Resource(name = "bookTypeMapper")
+	private BookTypeMapper bookTypeMapper;
 
 	protected final UserMapper getUserMapper() {
 		return this.userMapper;
@@ -39,6 +42,10 @@ public abstract class AbstractSystemService<T> extends AbstractService<T> {
 
 	protected final  PermsMapper getPermsMapper() {
 		return this.permsMapper;
+	}
+
+	protected BookTypeMapper getBookTypeMapper() {
+		return bookTypeMapper;
 	}
 
 	
