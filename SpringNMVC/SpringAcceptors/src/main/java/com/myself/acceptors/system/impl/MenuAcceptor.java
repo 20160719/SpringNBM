@@ -11,6 +11,7 @@ import com.myself.acceptors.system.IMenuAcceptor;
 import com.myself.busiobj.AbsBusObj;
 import com.myself.dto.EntityDto;
 import com.myself.exception.CustomException;
+import com.myself.persistences.entity.Operation;
 import com.myself.persistences.entity.Tree;
 
 @Service(value = "menuAcceptor")
@@ -24,6 +25,7 @@ public class MenuAcceptor extends AbstractSystemAcceptor<Tree> implements IMenuA
 
 	@Override
 	public BusinessResult creates(AbsBusObj<Tree> absBusObj) throws CustomException {
+		absBusObj.getOperation().setOpTyle(Operation.OP_CREATE);
 		return businessAcceptor(absBusObj, (entityDto) -> {
 			return getMenuService().creates(this.list);
 		});
@@ -31,6 +33,7 @@ public class MenuAcceptor extends AbstractSystemAcceptor<Tree> implements IMenuA
 
 	@Override
 	public BusinessResult modifys(AbsBusObj<Tree> absBusObj) throws CustomException {
+		absBusObj.getOperation().setOpTyle(Operation.OP_MODIFY);
 		return businessAcceptor(absBusObj, (entityDto) -> {
 			return getMenuService().modifys(this.list);
 		});
@@ -38,6 +41,7 @@ public class MenuAcceptor extends AbstractSystemAcceptor<Tree> implements IMenuA
 
 	@Override
 	public BusinessResult deletes(AbsBusObj<Tree> absBusObj) throws CustomException {
+		absBusObj.getOperation().setOpTyle(Operation.OP_DELETE);
 		return businessAcceptor(absBusObj, (entityDto) -> {
 			return getMenuService().deletes(this.list);
 		});
