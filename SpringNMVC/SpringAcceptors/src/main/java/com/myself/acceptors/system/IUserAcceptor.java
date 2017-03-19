@@ -14,7 +14,6 @@ public interface IUserAcceptor extends IAbstractAcceptor<User> {
 	
 	public List<Role> queryRoles(User user) throws CustomException;
 	
-	
 	public List<Permssion> queryPerms(User user) throws CustomException;
 
 }
