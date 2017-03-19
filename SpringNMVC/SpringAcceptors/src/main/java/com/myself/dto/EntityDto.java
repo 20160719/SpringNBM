@@ -2,13 +2,13 @@ package com.myself.dto;
 
 public abstract class EntityDto {
 
-	// 鍏ュ簱鏂瑰紡
+	// 操作类型
 	private String operateType;
-	// 搴忓垪鍙�
+	// 序列号
 	private String serialNum;
-	// 鎿嶄綔鐮�
+	// 操作码
 	private String opCode;
-	// json瀛楃涓�
+	// json字符串
 	private String targetJson;
 	
 	private String remark;
