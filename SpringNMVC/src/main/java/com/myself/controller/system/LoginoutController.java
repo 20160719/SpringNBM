@@ -23,9 +23,9 @@ public class LoginoutController extends AbstractSystemController {
 	
 	@RequestMapping(value = "login" + SUFFIX, method = RequestMethod.POST)
 	@Token(remove = true)
-	public String login(@RequestParam("userName") String userName,@RequestParam("password") String password) {
-		System.out.println(getMenuAcceptor());
-		UsernamePasswordToken token = new UsernamePasswordToken(userName, password);
+	public String login(@RequestParam("account") String account,@RequestParam("password") String password) {
+		UsernamePasswordToken token = new UsernamePasswordToken(account, password);
+		setAccount(account);
 		Subject subject = SecurityUtils.getSubject();
 		try {
 			Thread.sleep(3000);
